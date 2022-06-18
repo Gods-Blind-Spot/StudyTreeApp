@@ -1,0 +1,7 @@
+{
+  "name": "StudyTreeApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
