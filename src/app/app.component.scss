@@ -117,3 +117,21 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+div.user {
+  display: flex;
+
+  .user-avatar {
+    min-height: 64px;
+    min-width: 64px;
+    margin-right: 1em;
+  }
+
+  .user-info {
+    display: block;
+
+    * {
+      margin: .2em;
+    }
+  }
+}
