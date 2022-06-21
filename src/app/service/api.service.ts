@@ -1,10 +1,13 @@
-import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
+import { environment } from './../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Storage } from '@ionic/storage-angular';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+
+  private url = environment.urlAPI + 'User/';
 
   constructor(
     private http: HttpClient,
@@ -12,17 +15,33 @@ export class ApiService {
   ) { }
 
 
-  // TODO: Create the API call method
-  private async apiCall(directory: string, method: string, params?: Object || string) {
-    switch (method) {
-      case 'post':
+  async getUser(id: number): Promise<object> {
+    const rurl = this.url + id;
 
-        break;
-      case 'get':
+    console.log(rurl);
 
-        break;
-      default:
-        break;
-    }
+    const res = await this.http.get(rurl).toPromise();
+
+    return res;
+  }
+
+  async registerUser(body: object) {
+    const rurl = this.url + 'register';
+    console.log(rurl);
+
+    const res = await this.http.post(rurl, body).toPromise();
+    console.log(res);
+
+    return res;
+  }
+
+  async loginUser(body: object) {
+    const rurl = this.url + 'login';
+    console.log(rurl);
+
+    const res = await this.http.post(rurl, body).toPromise();
+    console.log(res);
+
+    return res;
   }
 }

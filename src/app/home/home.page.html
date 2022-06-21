@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="center">
+    <ion-button [routerLink]="['/registration']" expand="block" color="primary">Register</ion-button>
+    <span class="divider line one-line">or</span>
+    <span class="already">Already a user?</span>
+    <ion-button [routerLink]="['/login']" expand="block" color="secondary">Sign In</ion-button>
+  </div>
+</ion-content>

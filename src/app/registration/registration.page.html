@@ -8,6 +8,10 @@
     </header>
     <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" class="form">
       <ion-item>
+        <ion-label position="floating"><i class="fa-solid fa-user"></i> Username</ion-label>
+        <ion-input formControlName="username" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label position="floating"><i class="fa-solid fa-envelope"></i> Email</ion-label>
         <ion-input formControlName="email" type="email" required></ion-input>
       </ion-item>
@@ -17,7 +21,7 @@
       </ion-item>
 
       <ion-button type="submit" fill="solid" expand="block" >
-        Sign In
+        Register
       </ion-button>
     </form>
   </div>
